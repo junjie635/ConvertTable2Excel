@@ -1,0 +1,24 @@
+{
+    "name":"Table2XLSX",
+    "version":"1.0",
+    "description":"An extension convert web table to excel",
+    "author":"1295448630@qq.com",
+    "manifest_version":3,
+    "action":{
+        "default_title":"ConvertTable2Excel",
+        "default_popup":"popup.html"
+    },
+    "icons": {
+        "128": "icon/xlsx.png"
+      },
+    "background":{
+        "service_worker":"background.js"
+    },
+    "content_scripts":[
+        {
+            "matches":["<all_urls>"],
+            "js":["jquery.js","XLSX.js","content.js"]
+        }
+    ],
+    "permissions":["activeTab","scripting","contextMenus"]
+}
