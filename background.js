@@ -9,3 +9,15 @@ chrome.contextMenus.create({
       chrome.tabs.sendMessage(tab.id, {name: "ConvertTable2Excel"})
     }
   });
+
+  chrome.action.onClicked.addListener(async () => {
+      const [tab] = await chrome.tabs.query({active:true,lastFocusedWindow:true})
+      chrome.tabs.sendMessage(tab.id, {name: "ConvertTable2Excel"})
+  })
+
+  chrome.commands.onCommand.addListener(async (command)=>{
+    if(command === "ConvertTable2Excel"){
+      const [tab] = await chrome.tabs.query({active:true,lastFocusedWindow:true})
+      chrome.tabs.sendMessage(tab.id, {name: "ConvertTable2Excel"})
+    }
+  })

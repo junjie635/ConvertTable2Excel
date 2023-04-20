@@ -5,8 +5,7 @@
     "author":"1295448630@qq.com",
     "manifest_version":3,
     "action":{
-        "default_title":"ConvertTable2Excel",
-        "default_popup":"popup.html"
+        "default_title":"ConvertTable2Excel"
     },
     "icons": {
         "128": "icon/xlsx.png"
@@ -20,5 +19,14 @@
             "js":["js/jquery.js","js/XLSX.js","js/content.js"]
         }
     ],
-    "permissions":["activeTab","scripting","contextMenus"]
+    "commands":{
+        "ConvertTable2Excel": {
+            "suggested_key":{
+                "default":"Ctrl+Shift+K",
+                "mac":"Command+Shift+K"
+            },
+            "description":"Convert table to excel"
+        }
+    },
+    "permissions":["activeTab","scripting","contextMenus","commands"]
 }
